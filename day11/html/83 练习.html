@@ -37,7 +37,7 @@
 				 */
 				
 				//获取img标签
-				var img = document.getElementsByTagName("img")[0];
+				var img = document.getElementsByTagName("img")[0];  
 				
 				//创建一个数组，用来保存图片的路径
 				var imgArr = ["img/1.jpg" , "img/2.jpg" , "img/3.jpg" , "img/4.jpg" ,"img/5.jpg"];
@@ -75,12 +75,12 @@
 					/*
 					 * 切换到下一张是index自增
 					 */
-					index++;
+					index++;b
 					
 					if(index > imgArr.length - 1){
 						index = 0;
 					}
-					
+					b
 					//切换图片就是修改img的src属性
 					//要修改一个元素的属性 元素.属性 = 属性值
 					img.src = imgArr[index];
