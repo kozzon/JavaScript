@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <meta charset="utf-8">
+       <title>控制Div属性</title>
+    <style>
+        #outer{
+            width: 600px;
+            margin: 0 auto;
+            padding: 0;
+            text-align: center;
+            }
+
+        #kuang{
+            width: 150px;
+            height: 150px;
+            margin: 20px auto;
+            background: red;
+            display: block;
+            }
+    </style>
+   <script>
+       var changeStyle = function (elem , attr , value)
+       {
+           elem.style[attr] = value
+       };
+       window.onload = function ()
+       {
+           var oBtn = document.getElementsByTagName("input");
+           var oDiv = document.getElementById("kuang");
+           var oAtt = ["width","height","background","display","display"];
+           var oVal = ["200px","200px","green","none","block"];
+
+           for (var i = 0 ; i < oBtn.length; i++)
+           {
+               oBtn[i].index = i;
+               oBtn[i].onclick = function ()
+               {
+                   this.index == oBtn.length - 1 && (oDiv.style.cssText = "");
+                   changeStyle(oDiv,oAtt[this.index],oVal[this.index])
+               }
+           }
+       };
+   </script>
+   </head>
+    <body>
+    <div id="outer">
+    <input type="button" value="变宽">
+    <input type="button" value="变高">
+    <input type="button" value="变色">
+    <input type="button" value="隐藏">
+    <input type="button" value="重置">
+    <div id="kuang"></div>
+    </div>
+    </body>
+</html>
